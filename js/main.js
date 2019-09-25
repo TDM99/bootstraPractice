@@ -1,30 +1,19 @@
-window.sr = ScrollReveal();
+function Scroll(clase, duraction, origin, distance, delay){
+  window.sr = ScrollReveal();
+  sr.reveal(clase, {
+    duration: duraction,
+    origin: origin,
+    distance: distance,
+    delay: delay
+  });
+}
 
-sr.reveal('.navbar', {
-  duration: 2000,
-  origin: 'bottom'
-});
-
-sr.reveal('.header-content-left', {
-  duration: 2000,
-  origin: 'top',
-  distance: '300px'
-});
-
-sr.reveal('.header-content-right', {
-  duration: 2000,
-  origin: 'right',
-  distance: '300px'
-});
-
-sr.reveal('.header-bottom', {
-  duration: 2000,
-  origin: 'bottom',
-  delay: 1500
-});
+Scroll('.navbar', 2000, 'bottom', 0, 0);
+Scroll('.header-content-left', 2000, 'top', '300px', 0);
+Scroll('.header-content-right', 2000, 'right', '300px', 0);
+Scroll('.header-bottom', 2000, 'bottom', 0, 1500);
 
 //jquerry
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
       e.preventDefault();
